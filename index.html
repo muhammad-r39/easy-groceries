@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Groceries</title>
+    <link rel="icon" href="./assets/images/icon-white.png" />
+    <meta name="description" content="Easy Groceries" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Foundation -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation-float.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation-prototype.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/countdown.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="grid-container grid-x align-justify align-middle">
+        <div class="site-logo small-12 medium-4">
+          <a class="goto-home" href="#home">
+            <img src="./assets/images/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div
+          class="site-navigation small-12 medium-auto grid-x align-middle align-right"
+        >
+          <div
+            class="hide-for-large grid-x flex-dir-row align-middle search-and-cart"
+          >
+            <form class="position-relative search-container">
+              <input
+                class="margin-0"
+                type="search"
+                name="search"
+                placeholder="Search"
+              />
+              <i class="fas fa-magnifying-glass position-absolute"></i>
+            </form>
+            <a class="goto-cart" href="#cart">
+              <i class="fas fa-cart-shopping"></i>
+              <span class="cart-count">2</span>
+            </a>
+          </div>
+
+          <div>
+            <div class="mobile-menu-icon hide-for-large">
+              <i class="fa-solid fa-bars menu-toggle"></i>
+            </div>
+            <div id="mainMenu">
+              <div class="backdrop"></div>
+              <div
+                class="main-menu-wrapper grid-x flex-dir-column large-flex-dir-row align-middle"
+              >
+                <i class="fa-solid fa-xmark hide-for-large menu-toggle"></i>
+                <nav>
+                  <ul
+                    class="no-bullet margin-bottom-0 grid-x flex-dir-column large-flex-dir-row"
+                  >
+                    <li><a class="goto-home" href="#home">Home</a></li>
+                    <li>
+                      <a class="goto-departments" href="#departments"
+                        >Departments</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+                <div
+                  class="show-for-large grid-x flex-dir-row align-middle search-and-cart"
+                >
+                  <form class="position-relative search-container">
+                    <input
+                      class="margin-0"
+                      type="search"
+                      name="search"
+                      placeholder="Search"
+                    />
+                    <i class="fas fa-magnifying-glass position-absolute"></i>
+                  </form>
+                  <a class="goto-cart" href="#cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <span class="cart-count">2</span>
+                  </a>
+                </div>
+                <div class="user-menu">
+                  <a class="show-for-large">
+                    <i class="fa-regular fa-user"></i>
+                  </a>
+                  <ul class="no-bullet margin-0 grid-x flex-dir-column">
+                    <li><a class="goto-account" href="#">My Account</a></li>
+                    <li><a class="goto-wishlist" href="#">Wishlist</a></li>
+                    <li><a class="logout" href="#">Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Layout Sections -->
+      <!-- ! HOME  -->
+      <section class="show-home hideAll">
+        <!-- Hero -->
+        <div class="swiper hero">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/hero1.webp" alt="Hero background" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/hero2.webp" alt="Hero background" />
+              <div class="content-wrapper">
+                <h2>Best Grocery Store</h2>
+                <h3>We bring to you the best products with best price</h3>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/hero3.webp" alt="Hero background" />
+              <div class="content-wrapper">
+                <h2>Fulfiling your need at your doorstep</h2>
+                <h3>Fast delivery with satisfaction and care</h3>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/hero4.webp" alt="Hero background" />
+              <div class="content-wrapper">
+                <h2>Shop with us and Save Money</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="grid-container">
+          <!-- Category Section -->
+          <section id="sectionCategory">
+            <h2 class="section-title">Categories</h2>
+            <div class="section-sub-with-control">
+              <h3 class="section-subtitle">Browse By Departments</h3>
+              <div class="slider-navigation">
+                <div class="prev">🡠</div>
+                <div class="next">🡢</div>
+              </div>
+            </div>
+            <div class="swiper category-list">
+              <div class="swiper-wrapper"></div>
+            </div>
+          </section>
+          <section id="sectionSpecials">
+            <h2 class="section-title">Special Holiday Offers</h2>
+            <div class="section-sub-with-control">
+              <h3 class="section-subtitle">Flash Sales</h3>
+              <div id="countdown">00:00:00:00</div>
+              <script>
+                startCountdown(
+                  new Date("2025-03-26 23:59:59").getTime(),
+                  "#countdown"
+                );
+              </script>
+              <div class="slider-navigation">
+                <div class="prev">🡠</div>
+                <div class="next">🡢</div>
+              </div>
+            </div>
+            <div class="swiper specials">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide product-card style-1">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/holiday-feast-turkey-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="discount">-28%</span>
+                    <span class="add-to-fav">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">PC</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Holiday Feast Turkey Stuffing Burgers 568g</a
+                      >
+                    </h3>
+                    <p class="price">$16.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 4.5"></span>
+                      <span class="rating">(88)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-1">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/holiday-scented-candle-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="discount">-20%</span>
+                    <span class="add-to-fav">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">PC</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Holiday Scented Candle, 3-Wick Candle 1ea.</a
+                      >
+                    </h3>
+                    <p class="price">$10.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 4"></span>
+                      <span class="rating">(75)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-1">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/pure-jl-kraft-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="discount">-34%</span>
+                    <span class="add-to-fav">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">KRAFT</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Pure J.L. Kraft Dressing</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 4.6"></span>
+                      <span class="rating">(99)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-1">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/frozen-turkey-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="discount">-26%</span>
+                    <span class="add-to-fav">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">BUTTERBALL</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Frozen Turkey, 5-7 Kg</a
+                      >
+                    </h3>
+                    <p class="price">$19.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 4.5"></span>
+                      <span class="rating">(99)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-1">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/pure-jl-kraft-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="discount">-34%</span>
+                    <span class="add-to-fav">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">KRAFT</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Pure J.L. Kraft Dressing</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 4.6"></span>
+                      <span class="rating">(99)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="sectionMonthsBest">
+            <h2 class="section-title">Hit of the Month</h2>
+            <div class="section-sub-with-control">
+              <h3 class="section-subtitle">Best Selling Products</h3>
+              <div class="view-all">
+                <a class="btn btn-red" href="#">View All</a>
+              </div>
+            </div>
+            <div class="swiper months-best">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/broccoli-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">PRODUCE</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product">BROCCOLI</a>
+                    </h3>
+                    <p class="price">$1.99 / 1ea</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/caramel-macchiato-coffee-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Dairy</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Caramel Macchiato Coffee Creamer</a
+                      >
+                    </h3>
+                    <p class="price">$5.59 / 946ml</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 45"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/ready-to-serve-soup-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Grocery</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Ready To Serve Soup 540ml</a
+                      >
+                    </h3>
+                    <p class="price">$3.00 / 1ea</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/organic-greek-yogurt-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Dairy</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Organic Greek Yogurt Plain 4%</a
+                      >
+                    </h3>
+                    <p class="price">$6.29 / 1ea</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ! All DEPARTMENTS -->
+      <section id="showAllDepartments" class="show-departments hideAll">
+        <div class="grid-container">
+          <h2 class="section-title">Categories</h2>
+          <div class="section-sub-with-control">
+            <h3 class="section-subtitle">Browse By Departments</h3>
+          </div>
+          <div class="department-list"></div>
+        </div>
+      </section>
+
+      <!-- ! SINGLE DEPARTMENT  -->
+      <section class="show-department hideAll">
+        <div class="grid-container">
+          <section id="sectionDepartment">
+            <h2 class="section-title">Explore in</h2>
+            <div class="section-sub-with-control">
+              <h3 class="section-subtitle">Health & Beauty</h3>
+            </div>
+            <div class="sub-categories">
+              <ul>
+                <li>LIPSHADE</li>
+                <li>EYE SHADOW</li>
+                <li>NAIL PAINT</li>
+                <li>FOUNDATION</li>
+                <li selected>LIP BALM</li>
+                <li>MOISTURIZER</li>
+                <li>CHECK TINT</li>
+                <li>BLUSH</li>
+              </ul>
+            </div>
+            <div class="swiper department-detail">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/soft-moisterizing-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Nivea</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Soft Moisturizing Cream 200 ml</a
+                      >
+                    </h3>
+                    <p class="price">$10.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/after-sun-aloe-gel-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Life Brand</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >After sun Aloe Gel Care 567 g</a
+                      >
+                    </h3>
+                    <p class="price">$9.49</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/after-sun-aloe-vera-gel-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Live Clean</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >After Sun Aloe Vera Gel 227 ml</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/chapstick-classic-cherry-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Chapstick</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Classic, Cherry Value Pack 2 ea</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/color-statement-lipstrick-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Milani</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Color Statement Lipstick, Teddy Bare 1 ea</a
+                      >
+                    </h3>
+                    <p class="price">$6.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/eye-shadow-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Quo Beauty</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Eye Shadow, Good Morning 1 ea</a
+                      >
+                    </h3>
+                    <p class="price">$7</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/baby-got-blush-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Essence</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Baby Got Blush rose all day 1 ea</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/duo-blush-stick-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Quo Beauty</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Duo Blush Stick Hug & Kiss</a
+                      >
+                    </h3>
+                    <p class="price">$4.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/after-sun-aloe-vera-gel-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Live Clean</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >After Sun Aloe Vera Gel 227 ml</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/soft-moisterizing-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">Nivea</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Soft Moisturizing Cream 200 ml</a
+                      >
+                    </h3>
+                    <p class="price">$10.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-navigation">
+              <div class="prev">🡠</div>
+              <div class="next">🡢</div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ! PRODUCT  -->
+      <section class="show-product hideAll">
+        <div class="grid-container">
+          <section id="sectionProductDetails">
+            <div class="single-product-head">
+              <div>
+                <h1 class="section-title">Carbonaut Bread Seeded 544 g</h1>
+                <p class="price">$8.99</p>
+              </div>
+              <div class="product-sku">SKU_21215949_EA</div>
+              <!-- <div class="single-product-review">
+                <div class="rating-wrapper">
+                  <span class="stars" style="--percent: 5"></span>
+                  <span class="rating">(54 Reviews)</span>
+                </div>
+                |
+                <span class="in-stock">In Stock</span>
+              </div> -->
+            </div>
+            <div class="product-details">
+              <div class="product-gallery">
+                <div class="thumb-list">
+                  <img
+                    src="./assets/images/products/carbonaut-bread-thumb.webp"
+                    alt="product thumbnail"
+                  />
+                </div>
+                <div class="full-image">
+                  <img
+                    src="./assets/images/products/carbonaut-bread-full.webp"
+                    alt="full image"
+                  />
+                </div>
+              </div>
+              <div class="product-description">
+                <div>
+                  <strong class="description-title">DESCRIPTION</strong>
+                  <p>
+                    Water, Wheat Protein, Resistant Tapioca And/or Resistant
+                    Potato Starch, Flax Meal, High Oleic Sunflower Oil, Wheat
+                    And/or Bamboo Fibre, Seasame Seeds, Yeast, Psyllium, Inulin,
+                    Cultured Wheat Starch, Sunflower Seeds, Pea Fibre, Salt,
+                    Citric Acid. Contains: Wheat, Seasame.
+                  </p>
+                </div>
+                <div>
+                  <strong class="description-title">QUANTITY</strong>
+                  <div class="quantity-input">
+                    <button class="minus">−</button>
+                    <input type="number" value="1" min="1" />
+                    <button class="plus">+</button>
+                  </div>
+                  <div class="cart-options">
+                    <input
+                      id="buyNow"
+                      class="btn btn-red"
+                      type="button"
+                      value="Buy Now"
+                    />
+                    <input
+                      id="addToCart"
+                      class="btn btn-red"
+                      type="button"
+                      value="Add to Cart"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="sectionRelatedItems">
+            <h2 class="section-title">Related Items</h2>
+            <div class="swiper related-items">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-brand" href="#brand">
+                      <img
+                        src="./assets/images/products/thick-sliced-brioche-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-department" href="#department">
+                      <span class="brand">D'ltaliano</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Thick Sliced Brioche-Style Loaf 620 g</a
+                      >
+                    </h3>
+                    <p class="price">$3.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-brand" href="#brand">
+                      <img
+                        src="./assets/images/products/rosemary-focaccia-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">ACE</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Rosemary Focaccia <br />560 g</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/olive-ciabatta-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">ACE</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Olive Ciabatta <br />225 g</a
+                      >
+                    </h3>
+                    <p class="price">$3.29</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/ciabatta-demi-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">La Baguetterie</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Ciabatta Demi <br />450 g</a
+                      >
+                    </h3>
+                    <p class="price">$6.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide product-card style-2">
+                  <div class="product-head">
+                    <a class="goto-product" href="#product">
+                      <img
+                        src="./assets/images/products/rosemary-focaccia-small.webp"
+                        alt="Product"
+                      />
+                    </a>
+                    <span class="view-product-image">
+                      <i class="far fa-eye"></i>
+                    </span>
+                    <div class="add-to-cart-wrapper">
+                      <span class="cart-minus">-</span>
+                      <input
+                        class="add-to-cart"
+                        type="button"
+                        value="Add To Cart"
+                      />
+                      <span class="cart-plus">+</span>
+                    </div>
+                  </div>
+                  <div class="product-body">
+                    <a class="goto-brand" href="#brand">
+                      <span class="brand">ACE</span>
+                    </a>
+                    <h3 class="product-title">
+                      <a class="goto-product" href="#product"
+                        >Rosemary Focaccia <br />560 g</a
+                      >
+                    </h3>
+                    <p class="price">$5.99</p>
+                    <div class="rating-wrapper">
+                      <span class="stars" style="--percent: 5"></span>
+                      <span class="rating">(65)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ! CART  -->
+      <section class="show-cart hideAll">
+        <div class="grid-container">
+          <h1>Shopping Cart</h1>
+          <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="cell large-8 medium-12 small-12">
+              <div class="cart-items">
+                <p>No items in the cart.</p>
+              </div>
+            </div>
+            <div class="cell large-4 medium-12 small-12">
+              <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <p>Total: $0.00</p>
+                <button class="button click-shipping">
+                  Proceed to Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ! SHIPPING  -->
+      <section class="show-shipping hideAll">
+        <h2>SHIPPING</h2>
+        <div class="click-payment">PAYMENT</div>
+      </section>
+
+      <!-- ! PAYMENT  -->
+      <section class="show-payment hideAll">
+        <h2>PAYMENT</h2>
+        <div class="click-review">REVIEW ORDER</div>
+      </section>
+
+      <!-- ! REVIEW  -->
+      <section class="show-review hideAll">
+        <h2>REVIEW ORDER</h2>
+        <div class="click-complete">ORDER COMPLETE</div>
+      </section>
+
+      <!-- ! ORDER COMPLETE  -->
+      <section class="show-complete hideAll">
+        <h2>ORDER COMPLETE</h2>
+      </section>
+
+      <!-- ! REGISTER  -->
+      <section class="show-register hideAll">
+        <h2>REGISTER</h2>
+        <div class="click-forgot">FORGOT PASSWORD</div>
+        <div class="click-reset">RESET PASSWORD</div>
+      </section>
+
+      <!-- ! FORGOT PASSWORD  -->
+      <section class="show-forgot hideAll">
+        <h2>FORGOT PASSWORD</h2>
+      </section>
+
+      <!-- ! RESET PASSWORD  -->
+      <section class="show-reset hideAll">
+        <h2>RESET PASSWORD</h2>
+      </section>
+
+      <!-- ! STORE LOCATION  -->
+      <section class="show-location hideAll">
+        <h2>ITS A VIRTUAL STORE</h2>
+        <p>MORE INFORMATION ARRIVING SOON ......;|</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="grid-container">
+        <!-- Newsletter -->
+        <div class="newsletter grid-x">
+          <h2 class="small-12 medium-7 large-8">
+            Subscribe To <br />Our Weekly Flayers!
+          </h2>
+          <form class="small-12 medium-5 large-4 grid-x">
+            <input tyle="email" placeholder="Enter your email address" />
+            <input type="submit" value="Subscribe to Newsletter" />
+          </form>
+        </div>
+        <!-- Widgets -->
+        <div class="widgets grid-x flex-dir-row">
+          <div class="footer-logo medium-12 large-auto">
+            <img src="./assets/images/logo.png" alt="logo" />
+            <p>
+              "Your one-stop destination for fresh, affordable groceries and
+              seamless shopping- <br />
+              delivered to your doorstep or planned for your meals."
+            </p>
+          </div>
+          <div class="quick-links small-12 medium-6 large-2">
+            <h3>Quick Links</h3>
+            <ul class="no-bullet grid-x">
+              <li><a class="goto-home" href="#home">Home</a></li>
+              <li>
+                <a class="goto-departments" href="#departments">Departments</a>
+              </li>
+              <li><a class="goto-cart" href="#cart">Cart</a></li>
+            </ul>
+          </div>
+          <div class="help-links small-12 medium-6 large-2">
+            <h3>Help</h3>
+            <ul class="no-bullet grid-x">
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          <p class="margin-0">
+            &copy; 2025 Easy Groceries. All rights reserved.
+          </p>
+          <div class="acceptable-payments">
+            <img src="./assets/images/visa.png" alt="Visa" />
+            <img src="./assets/images/mastercard.png" alt="Mastercard" />
+            <img src="./assets/images/paypal.png" alt="PayPal" />
+            <img src="./assets/images/apple-pay.png" alt="Apple Pay" />
+            <img src="./assets/images/google-pay.png" alt="Google Pay" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal for Login -->
+    <div id="loginModal" class="modal hide">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).foundation();
+      // Quantity Input
+      document.querySelectorAll(".quantity-input").forEach((wrapper) => {
+        const minusBtn = wrapper.querySelector(".minus");
+        const plusBtn = wrapper.querySelector(".plus");
+        const input = wrapper.querySelector("input");
+
+        minusBtn.addEventListener("click", () => {
+          let value = parseInt(input.value) || 0;
+          if (value > parseInt(input.min || 1)) {
+            input.value = value - 1;
+          }
+        });
+
+        plusBtn.addEventListener("click", () => {
+          let value = parseInt(input.value) || 0;
+          input.value = value + 1;
+        });
+      });
+    </script>
+
+    <script src="./js/vendor.js"></script>
+    <script src="./js/sammy.min.js" type="text/javascript"></script>
+    <script src="./js/sammy.template.js" type="text/javascript"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/dataMarkup.js"></script>
+    <script src="./js/loadData.js"></script>
+    <script src="./js/carousels.js"></script>
+  </body>
+</html>
