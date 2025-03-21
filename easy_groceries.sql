@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2025 at 04:58 AM
+-- Generation Time: Mar 19, 2025 at 09:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -79,7 +79,7 @@ INSERT INTO `departments` (`id`, `name`, `image`) VALUES
 CREATE TABLE `flash_sale` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `discount` decimal(5,2) NOT NULL
+  `discount` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -87,12 +87,12 @@ CREATE TABLE `flash_sale` (
 --
 
 INSERT INTO `flash_sale` (`id`, `product_id`, `discount`) VALUES
-(1, 3, 26.00),
-(2, 7, 32.00),
-(3, 10, 30.00),
-(4, 14, 28.00),
-(5, 17, 18.00),
-(6, 21, 20.00);
+(1, 3, 26),
+(2, 7, 32),
+(3, 10, 30),
+(4, 14, 28),
+(5, 17, 18),
+(6, 21, 20);
 
 -- --------------------------------------------------------
 
@@ -108,35 +108,36 @@ CREATE TABLE `products` (
   `cover_image` varchar(255) DEFAULT NULL,
   `brand` varchar(100) DEFAULT NULL,
   `department` int(11) DEFAULT NULL,
-  `sub_category` int(11) DEFAULT NULL
+  `sub_category` int(11) DEFAULT NULL,
+  `sku` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `cover_image`, `brand`, `department`, `sub_category`) VALUES
-(1, 'Holiday Feast Turkey Stuffing Burgers 568g', 'Delicious gourmet turkey burgers with savory stuffing mix blended right in. Ready to cook from frozen, these juicy burgers bring the flavor of Thanksgiving to your table any time of year. Perfect for quick family dinners or casual entertaining.', 16.99, 'holiday-feast-turkey-small.webp', 'PC', 6, 1),
-(2, 'Holiday Scented Candle, 3-Wick Candle 1ea.', 'Transform your home with this luxurious 3-wick scented candle. Featuring notes of pine, cinnamon, and vanilla, it creates a warm, inviting atmosphere perfect for holiday gatherings. Three wicks provide even burning and maximum fragrance distribution. Approximately 25-45 hours of burn time.', 10.99, 'holiday-scented-candle-small.webp', 'PC', 3, 2),
-(3, 'Pure J.L. Kraft Dressing', 'The original creamy salad dressing with the perfect balance of tangy and sweet. Made with high-quality ingredients and no artificial preservatives. Versatile enough for salads, sandwiches, or as a dip for vegetables and wings.', 5.99, 'pure-jl-kraft-small.webp', 'KRAFT', 3, 4),
-(4, 'Frozen Turkey, 5-7 Kg', 'Premium grade A frozen turkey, perfect for holiday feasts or special family dinners. Farm-raised without antibiotics, this turkey offers juicy, tender meat with exceptional flavor. Easy preparation instructions included for a perfectly roasted centerpiece.', 19.99, 'frozen-turkey-small.webp', 'BUTTERBALL', 6, 3),
-(5, 'BROCCOLI', 'Farm-fresh broccoli with tight, green florets and crisp stalks. Rich in vitamins C and K, fiber, and antioxidants. Perfect for steaming, roasting, stir-fries, or enjoying raw with your favorite dip. Harvested at peak ripeness for maximum freshness and nutrition.', 1.99, 'broccoli-small.webp', 'PRODUCE', 3, 5),
-(6, 'Caramel Macchiato Coffee Creamer 946ml', 'Indulge in the rich, creamy taste of caramel macchiato in your morning coffee. This premium coffee creamer combines caramel sweetness with hints of vanilla and a smooth, creamy texture. Transform ordinary coffee into a coffeehouse-quality beverage right at home.', 5.59, 'caramel-macchiato-coffee-small.webp', 'Delight', 3, 8),
-(7, 'Ready To Serve Soup 540ml', 'Hearty, delicious soup made with premium ingredients and slow-simmered to develop rich flavors. Ready to heat and serve for a quick, satisfying meal. Perfect paired with a sandwich or salad, or enjoyed on its own with crackers or crusty bread.', 3.00, 'ready-to-serve-soup-small.webp', 'Tim Hortons', 3, 6),
-(8, 'Organic Greek Yogurt Plain 4%', 'Authentic Greek yogurt made from organic milk and traditional straining methods. With 4% milkfat for a creamy, indulgent texture and 18g of protein per serving. No added sugars, artificial flavors, or preservatives. Perfect for breakfast parfaits, smoothies, or as a versatile cooking ingredient.', 6.29, 'organic-greek-yogurt-small.webp', 'Olympic', 2, 7),
-(9, 'Carbonaut Bread Seeded 544 g', 'Low-carb seeded bread that doesn\'t compromise on taste or texture. Made with a blend of nutritious seeds including flax, sunflower, and pumpkin for added fiber and protein. Perfect for sandwiches, toast, or alongside soups and salads. Only 1g net carb per slice.', 8.99, 'carbonaut-bread-small.webp', 'Carbonaut', 1, 9),
-(10, 'Thick Sliced Brioche-Style Loaf 620 g', 'Luxuriously soft brioche-style bread sliced extra thick for the ultimate French toast, grilled cheese, or gourmet sandwich. Made with real butter and eggs for a rich, slightly sweet flavor. Each slice delivers the perfect balance of airy lightness and substantial texture.', 3.99, 'thick-sliced-brioche-small.webp', 'D\'ltaliano', 1, 9),
-(11, 'Rosemary Focaccia 560 g', 'Aromatic rosemary focaccia crafted in the traditional Italian style. Topped with fresh rosemary and sea salt, then baked to perfection with a crisp exterior and soft, airy interior. Perfect for dipping in olive oil, serving alongside pasta, or creating gourmet sandwiches.', 5.99, 'rosemary-focaccia-small.webp', 'ACE', 1, 9),
-(12, 'Olive Ciabatta 225 g', 'Rustic ciabatta bread studded with kalamata and green olives for a Mediterranean flavor experience. Hand-crafted with a slow fermentation process for complex flavor and perfect texture—crisp crust with a light, airy interior. Ideal for bruschetta or alongside soups and salads.', 3.29, 'olive-ciabatta-small.webp', 'ACE', 1, 9),
-(13, 'Ciabatta Demi 450 g', 'Traditional Italian ciabatta bread in a convenient half-size format. Features the classic crisp crust and airy, open crumb structure that ciabatta is known for. Perfect size for sandwiches, garlic bread, or serving 2-3 people. Freshly baked and delivered daily.', 6.99, 'ciabatta-demi-small.webp', 'La Baguetterie', 1, 9),
-(14, 'Soft Moisturizing Cream 200 ml', 'Ultra-hydrating face cream that provides 24-hour moisture without a greasy feel. Formulated with hyaluronic acid, ceramides, and vitamin E to strengthen the skin barrier and improve elasticity. Suitable for all skin types, especially dry and sensitive skin. Dermatologist tested and fragrance-free.', 10.99, 'soft-moisterizing-small.webp', 'Nivea', 4, 10),
-(15, 'After sun Aloe Gel Care 567 g', 'Soothing aloe gel that immediately cools and refreshes sun-exposed skin. Rich in aloe vera, cucumber extract, and vitamin E to hydrate, calm redness, and accelerate skin recovery. Non-greasy formula absorbs quickly and provides instant relief from sun discomfort. Can be stored in the refrigerator for enhanced cooling effect.', 9.49, 'after-sun-aloe-gel-small.webp', 'Life Brand', 4, 14),
-(16, 'After Sun Aloe Vera Gel 227 ml', 'Pure, soothing aloe vera gel that provides immediate relief for sunburned or irritated skin. Contains 99% organic aloe vera to hydrate, cool, and help repair damaged skin cells. Absorbs quickly with no sticky residue. Also great for minor burns, insect bites, and dry skin conditions.', 5.99, 'after-sun-aloe-vera-gel-small.webp', 'Live Clean', 4, 14),
-(17, 'Classic, Cherry Value Pack 2 ea', 'Iconic cherry-flavored lip balm in a convenient value pack. Provides long-lasting moisture while protecting lips from dryness. Contains SPF 4 to shield against harmful UV rays. The classic cherry flavor everyone loves with a subtle tint that enhances your natural lip color.', 5.99, 'chapstick-classic-cherry-small.webp', 'Chapstick', 4, 15),
-(18, 'Color Statement Lipstick, Teddy Bare 1 ea', 'Creamy, high-pigment lipstick in the universally flattering nude shade \"Teddy Bare.\" Smooth application with a semi-matte finish that lasts for hours without drying your lips. Enriched with vitamin E and shea butter for comfortable wear and hydration throughout the day.', 6.99, 'color-statement-lipstrick-small.webp', 'Milani', 4, 11),
-(19, 'Eye Shadow, Good Morning 1 ea', 'Silky smooth eyeshadow in \"Good Morning,\" a versatile champagne shimmer that brightens eyes instantly. Highly pigmented formula applies evenly and blends effortlessly. Can be worn alone for a subtle daytime look or layered for more intensity. Crease-resistant formula lasts all day without fading.', 7.00, 'eye-shadow-small.webp', 'Quo Beauty', 4, 12),
-(20, 'Baby Got Blush rose all day 1 ea', 'Vibrant rose-toned blush that adds a natural flush of color to cheeks. Buildable formula allows for subtle to bold application. Silky powder blends seamlessly into skin for a natural, radiant finish. Infused with vitamin E to nourish skin while providing long-lasting color.', 5.99, 'baby-got-blush-small.webp', 'Essence', 4, 13),
-(21, 'Duo Blush Stick Hug & Kiss', 'Innovative dual-ended blush stick featuring complementary shades \"Hug\" (soft peach) and \"Kiss\" (rosy pink). Creamy formula glides on smoothly and blends effortlessly for a natural-looking flush. Can be worn separately or blended together for a custom color. Perfect for on-the-go touch-ups.', 4.99, 'duo-blush-stick-small.webp', 'Quo Beauty', 4, 11);
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `cover_image`, `brand`, `department`, `sub_category`, `sku`) VALUES
+(1, 'Holiday Feast Turkey Stuffing Burgers 568g', 'Delicious gourmet turkey burgers with savory stuffing mix blended right in. Ready to cook from frozen, these juicy burgers bring the flavor of Thanksgiving to your table any time of year. Perfect for quick family dinners or casual entertaining.', 16.99, 'holiday-feast-turkey-small.webp', 'PC', 6, 1, 'SKU-1001'),
+(2, 'Holiday Scented Candle, 3-Wick Candle 1ea.', 'Transform your home with this luxurious 3-wick scented candle. Featuring notes of pine, cinnamon, and vanilla, it creates a warm, inviting atmosphere perfect for holiday gatherings. Three wicks provide even burning and maximum fragrance distribution. Approximately 25-45 hours of burn time.', 10.99, 'holiday-scented-candle-small.webp', 'PC', 3, 2, 'SKU-1002'),
+(3, 'Pure J.L. Kraft Dressing', 'The original creamy salad dressing with the perfect balance of tangy and sweet. Made with high-quality ingredients and no artificial preservatives. Versatile enough for salads, sandwiches, or as a dip for vegetables and wings.', 5.99, 'pure-jl-kraft-small.webp', 'KRAFT', 3, 4, 'SKU-1003'),
+(4, 'Frozen Turkey, 5-7 Kg', 'Premium grade A frozen turkey, perfect for holiday feasts or special family dinners. Farm-raised without antibiotics, this turkey offers juicy, tender meat with exceptional flavor. Easy preparation instructions included for a perfectly roasted centerpiece.', 19.99, 'frozen-turkey-small.webp', 'BUTTERBALL', 6, 3, 'SKU-1004'),
+(5, 'BROCCOLI', 'Farm-fresh broccoli with tight, green florets and crisp stalks. Rich in vitamins C and K, fiber, and antioxidants. Perfect for steaming, roasting, stir-fries, or enjoying raw with your favorite dip. Harvested at peak ripeness for maximum freshness and nutrition.', 1.99, 'broccoli-small.webp', 'PRODUCE', 3, 5, 'SKU-1005'),
+(6, 'Caramel Macchiato Coffee Creamer 946ml', 'Indulge in the rich, creamy taste of caramel macchiato in your morning coffee. This premium coffee creamer combines caramel sweetness with hints of vanilla and a smooth, creamy texture. Transform ordinary coffee into a coffeehouse-quality beverage right at home.', 5.59, 'caramel-macchiato-coffee-small.webp', 'Delight', 3, 8, 'SKU-1006'),
+(7, 'Ready To Serve Soup 540ml', 'Hearty, delicious soup made with premium ingredients and slow-simmered to develop rich flavors. Ready to heat and serve for a quick, satisfying meal. Perfect paired with a sandwich or salad, or enjoyed on its own with crackers or crusty bread.', 3.00, 'ready-to-serve-soup-small.webp', 'Tim Hortons', 3, 6, 'SKU-1007'),
+(8, 'Organic Greek Yogurt Plain 4%', 'Authentic Greek yogurt made from organic milk and traditional straining methods. With 4% milkfat for a creamy, indulgent texture and 18g of protein per serving. No added sugars, artificial flavors, or preservatives. Perfect for breakfast parfaits, smoothies, or as a versatile cooking ingredient.', 6.29, 'organic-greek-yogurt-small.webp', 'Olympic', 2, 7, 'SKU-1008'),
+(9, 'Carbonaut Bread Seeded 544 g', 'Low-carb seeded bread that doesn\'t compromise on taste or texture. Made with a blend of nutritious seeds including flax, sunflower, and pumpkin for added fiber and protein. Perfect for sandwiches, toast, or alongside soups and salads. Only 1g net carb per slice.', 8.99, 'carbonaut-bread-small.webp', 'Carbonaut', 1, 9, 'SKU-1009'),
+(10, 'Thick Sliced Brioche-Style Loaf 620 g', 'Luxuriously soft brioche-style bread sliced extra thick for the ultimate French toast, grilled cheese, or gourmet sandwich. Made with real butter and eggs for a rich, slightly sweet flavor. Each slice delivers the perfect balance of airy lightness and substantial texture.', 3.99, 'thick-sliced-brioche-small.webp', 'D\'ltaliano', 1, 9, 'SKU-1010'),
+(11, 'Rosemary Focaccia 560 g', 'Aromatic rosemary focaccia crafted in the traditional Italian style. Topped with fresh rosemary and sea salt, then baked to perfection with a crisp exterior and soft, airy interior. Perfect for dipping in olive oil, serving alongside pasta, or creating gourmet sandwiches.', 5.99, 'rosemary-focaccia-small.webp', 'ACE', 1, 9, 'SKU-1011'),
+(12, 'Olive Ciabatta 225 g', 'Rustic ciabatta bread studded with kalamata and green olives for a Mediterranean flavor experience. Hand-crafted with a slow fermentation process for complex flavor and perfect texture—crisp crust with a light, airy interior. Ideal for bruschetta or alongside soups and salads.', 3.29, 'olive-ciabatta-small.webp', 'ACE', 1, 9, 'SKU-1012'),
+(13, 'Ciabatta Demi 450 g', 'Traditional Italian ciabatta bread in a convenient half-size format. Features the classic crisp crust and airy, open crumb structure that ciabatta is known for. Perfect size for sandwiches, garlic bread, or serving 2-3 people. Freshly baked and delivered daily.', 6.99, 'ciabatta-demi-small.webp', 'La Baguetterie', 1, 9, 'SKU-1013'),
+(14, 'Soft Moisturizing Cream 200 ml', 'Ultra-hydrating face cream that provides 24-hour moisture without a greasy feel. Formulated with hyaluronic acid, ceramides, and vitamin E to strengthen the skin barrier and improve elasticity. Suitable for all skin types, especially dry and sensitive skin. Dermatologist tested and fragrance-free.', 10.99, 'soft-moisterizing-small.webp', 'Nivea', 4, 10, 'SKU-1014'),
+(15, 'After sun Aloe Gel Care 567 g', 'Soothing aloe gel that immediately cools and refreshes sun-exposed skin. Rich in aloe vera, cucumber extract, and vitamin E to hydrate, calm redness, and accelerate skin recovery. Non-greasy formula absorbs quickly and provides instant relief from sun discomfort. Can be stored in the refrigerator for enhanced cooling effect.', 9.49, 'after-sun-aloe-gel-small.webp', 'Life Brand', 4, 14, 'SKU-1015'),
+(16, 'After Sun Aloe Vera Gel 227 ml', 'Pure, soothing aloe vera gel that provides immediate relief for sunburned or irritated skin. Contains 99% organic aloe vera to hydrate, cool, and help repair damaged skin cells. Absorbs quickly with no sticky residue. Also great for minor burns, insect bites, and dry skin conditions.', 5.99, 'after-sun-aloe-vera-gel-small.webp', 'Live Clean', 4, 14, 'SKU-1016'),
+(17, 'Classic, Cherry Value Pack 2 ea', 'Iconic cherry-flavored lip balm in a convenient value pack. Provides long-lasting moisture while protecting lips from dryness. Contains SPF 4 to shield against harmful UV rays. The classic cherry flavor everyone loves with a subtle tint that enhances your natural lip color.', 5.99, 'chapstick-classic-cherry-small.webp', 'Chapstick', 4, 15, 'SKU-1017'),
+(18, 'Color Statement Lipstick, Teddy Bare 1 ea', 'Creamy, high-pigment lipstick in the universally flattering nude shade \"Teddy Bare.\" Smooth application with a semi-matte finish that lasts for hours without drying your lips. Enriched with vitamin E and shea butter for comfortable wear and hydration throughout the day.', 6.99, 'color-statement-lipstrick-small.webp', 'Milani', 4, 11, 'SKU-1018'),
+(19, 'Eye Shadow, Good Morning 1 ea', 'Silky smooth eyeshadow in \"Good Morning,\" a versatile champagne shimmer that brightens eyes instantly. Highly pigmented formula applies evenly and blends effortlessly. Can be worn alone for a subtle daytime look or layered for more intensity. Crease-resistant formula lasts all day without fading.', 7.00, 'eye-shadow-small.webp', 'Quo Beauty', 4, 12, 'SKU-1019'),
+(20, 'Baby Got Blush rose all day 1 ea', 'Vibrant rose-toned blush that adds a natural flush of color to cheeks. Buildable formula allows for subtle to bold application. Silky powder blends seamlessly into skin for a natural, radiant finish. Infused with vitamin E to nourish skin while providing long-lasting color.', 5.99, 'baby-got-blush-small.webp', 'Essence', 4, 13, 'SKU-1020'),
+(21, 'Duo Blush Stick Hug & Kiss', 'Innovative dual-ended blush stick featuring complementary shades \"Hug\" (soft peach) and \"Kiss\" (rosy pink). Creamy formula glides on smoothly and blends effortlessly for a natural-looking flush. Can be worn separately or blended together for a custom color. Perfect for on-the-go touch-ups.', 4.99, 'duo-blush-stick-small.webp', 'Quo Beauty', 4, 11, 'SKU-1021');
 
 -- --------------------------------------------------------
 
@@ -148,56 +149,57 @@ CREATE TABLE `product_images` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `type` enum('thumb','full') NOT NULL
+  `type` enum('thumb','full') NOT NULL,
+  `pair` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product_images`
 --
 
-INSERT INTO `product_images` (`id`, `product_id`, `image`, `type`) VALUES
-(1, 1, 'holiday-feast-turkey-thumb.webp', 'thumb'),
-(2, 2, 'holiday-scented-candle-thumb.webp', 'thumb'),
-(3, 3, 'pure-jl-kraft-thumb.webp', 'thumb'),
-(4, 4, 'frozen-turkey-thumb.webp', 'thumb'),
-(5, 5, 'broccoli-thumb.webp', 'thumb'),
-(6, 6, 'caramel-macchiato-coffee-thumb.webp', 'thumb'),
-(7, 7, 'ready-to-serve-soup-thumb.webp', 'thumb'),
-(8, 8, 'organic-greek-yogurt-thumb.webp', 'thumb'),
-(9, 9, 'carbonaut-bread-thumb.webp', 'thumb'),
-(10, 10, 'thick-sliced-brioche-thumb.webp', 'thumb'),
-(11, 11, 'rosemary-focaccia-thumb.webp', 'thumb'),
-(12, 12, 'olive-ciabatta-thumb.webp', 'thumb'),
-(13, 13, 'ciabatta-demi-thumb.webp', 'thumb'),
-(14, 14, 'soft-moisterizing-thumb.webp', 'thumb'),
-(15, 15, 'after-sun-aloe-gel-thumb.webp', 'thumb'),
-(16, 16, 'after-sun-aloe-vera-gel-thumb.webp', 'thumb'),
-(17, 17, 'chapstick-classic-cherry-thumb.webp', 'thumb'),
-(18, 18, 'color-statement-lipstrick-thumb.webp', 'thumb'),
-(19, 19, 'eye-shadow-thumb.webp', 'thumb'),
-(20, 20, 'baby-got-blush-thumb.webp', 'thumb'),
-(21, 21, 'duo-blush-stick-thumb.webp', 'thumb'),
-(22, 1, 'holiday-feast-turkey-full.webp', 'full'),
-(23, 2, 'holiday-scented-candle-full.webp', 'full'),
-(24, 3, 'pure-jl-kraft-full.webp', 'full'),
-(25, 4, 'frozen-turkey-full.webp', 'full'),
-(26, 5, 'broccoli-full.webp', 'full'),
-(27, 6, 'caramel-macchiato-coffee-full.webp', 'full'),
-(28, 7, 'ready-to-serve-soup-full.webp', 'full'),
-(29, 8, 'organic-greek-yogurt-full.webp', 'full'),
-(30, 9, 'carbonaut-bread-full.webp', 'full'),
-(31, 10, 'thick-sliced-brioche-full.webp', 'full'),
-(32, 11, 'rosemary-focaccia-full.webp', 'full'),
-(33, 12, 'olive-ciabatta-full.webp', 'full'),
-(34, 13, 'ciabatta-demi-full.webp', 'full'),
-(35, 14, 'soft-moisterizing-full.webp', 'full'),
-(36, 15, 'after-sun-aloe-gel-full.webp', 'full'),
-(37, 16, 'after-sun-aloe-vera-gel-full.webp', 'full'),
-(38, 17, 'chapstick-classic-cherry-full.webp', 'full'),
-(39, 18, 'color-statement-lipstrick-full.webp', 'full'),
-(40, 19, 'eye-shadow-full.webp', 'full'),
-(41, 20, 'baby-got-blush-full.webp', 'full'),
-(42, 21, 'duo-blush-stick-full.webp', 'full');
+INSERT INTO `product_images` (`id`, `product_id`, `image`, `type`, `pair`) VALUES
+(1, 1, 'holiday-feast-turkey-thumb.webp', 'thumb', 0),
+(2, 2, 'holiday-scented-candle-thumb.webp', 'thumb', 0),
+(3, 3, 'pure-jl-kraft-thumb.webp', 'thumb', 0),
+(4, 4, 'frozen-turkey-thumb.webp', 'thumb', 0),
+(5, 5, 'broccoli-thumb.webp', 'thumb', 0),
+(6, 6, 'caramel-macchiato-coffee-thumb.webp', 'thumb', 0),
+(7, 7, 'ready-to-serve-soup-thumb.webp', 'thumb', 0),
+(8, 8, 'organic-greek-yogurt-thumb.webp', 'thumb', 0),
+(9, 9, 'carbonaut-bread-thumb.webp', 'thumb', 0),
+(10, 10, 'thick-sliced-brioche-thumb.webp', 'thumb', 0),
+(11, 11, 'rosemary-focaccia-thumb.webp', 'thumb', 0),
+(12, 12, 'olive-ciabatta-thumb.webp', 'thumb', 0),
+(13, 13, 'ciabatta-demi-thumb.webp', 'thumb', 0),
+(14, 14, 'soft-moisterizing-thumb.webp', 'thumb', 0),
+(15, 15, 'after-sun-aloe-gel-thumb.webp', 'thumb', 0),
+(16, 16, 'after-sun-aloe-vera-gel-thumb.webp', 'thumb', 0),
+(17, 17, 'chapstick-classic-cherry-thumb.webp', 'thumb', 0),
+(18, 18, 'color-statement-lipstrick-thumb.webp', 'thumb', 0),
+(19, 19, 'eye-shadow-thumb.webp', 'thumb', 0),
+(20, 20, 'baby-got-blush-thumb.webp', 'thumb', 0),
+(21, 21, 'duo-blush-stick-thumb.webp', 'thumb', 0),
+(22, 1, 'holiday-feast-turkey-full.webp', 'full', 0),
+(23, 2, 'holiday-scented-candle-full.webp', 'full', 0),
+(24, 3, 'pure-jl-kraft-full.webp', 'full', 0),
+(25, 4, 'frozen-turkey-full.webp', 'full', 0),
+(26, 5, 'broccoli-full.webp', 'full', 0),
+(27, 6, 'caramel-macchiato-coffee-full.webp', 'full', 0),
+(28, 7, 'ready-to-serve-soup-full.webp', 'full', 0),
+(29, 8, 'organic-greek-yogurt-full.webp', 'full', 0),
+(30, 9, 'carbonaut-bread-full.webp', 'full', 0),
+(31, 10, 'thick-sliced-brioche-full.webp', 'full', 0),
+(32, 11, 'rosemary-focaccia-full.webp', 'full', 0),
+(33, 12, 'olive-ciabatta-full.webp', 'full', 0),
+(34, 13, 'ciabatta-demi-full.webp', 'full', 0),
+(35, 14, 'soft-moisterizing-full.webp', 'full', 0),
+(36, 15, 'after-sun-aloe-gel-full.webp', 'full', 0),
+(37, 16, 'after-sun-aloe-vera-gel-full.webp', 'full', 0),
+(38, 17, 'chapstick-classic-cherry-full.webp', 'full', 0),
+(39, 18, 'color-statement-lipstrick-full.webp', 'full', 0),
+(40, 19, 'eye-shadow-full.webp', 'full', 0),
+(41, 20, 'baby-got-blush-full.webp', 'full', 0),
+(42, 21, 'duo-blush-stick-full.webp', 'full', 0);
 
 -- --------------------------------------------------------
 
